@@ -19,7 +19,7 @@ import { DataSource } from 'typeorm';
         database: configService.get('database.database'),
         entities: [User, Otp, RefreshToken],
         synchronize: process.env.NODE_ENV === 'development', // Only in development
-        logging: process.env.NODE_ENV === 'development', // Only in development
+        logging: false, // Disabled to reduce console output
         migrations: ['dist/database/migrations/*.js'],
         migrationsRun: process.env.NODE_ENV === 'production', // Run migrations in production
         timezone: 'Z', // UTC timezone
