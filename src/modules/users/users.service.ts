@@ -98,6 +98,7 @@ export class UsersService {
     }
 
     await this.usersRepository.update(id, updateUserDto);
+    
     return await this.findOne(id);
   }
 
